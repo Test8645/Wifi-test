@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wi-Fi Error with Sound</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #notification {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 20px;
+      border: 1px solid #f5c6cb;
+      border-radius: 10px;
+      display: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wi-Fi Speed</h1>
+  <p>Click test speed wifi.</p>
+  <button onclick="playSoundAndShowNotification()">Test Wi-Fi</button>
+
+  <div id="notification">
+    <h2>Wi-Fi Disconnected!</h2>
+    <p>It seems your Wi-Fi connection has been lost. Please check your router or contact your ISP.</p>
+  </div>
+
+  <!-- Embed the sound file -->
+  <audio id="sound-effect">
+    <source src="Sbaysby_jeamuy_sound.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playSoundAndShowNotification() {
+      // Play the sound
+      var sound = document.getElementById('sound-effect');
+      sound.play();
+
+      // Show the notification
+      document.getElementById('notification').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
